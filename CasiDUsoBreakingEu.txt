@@ -1,0 +1,92 @@
+CASO D'USO 1 ADMIN: Aggiuntà di una news
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità news ,country, politician  e la cancellazione dei commenti)
+3) l'ADMIN seleziona "Inserisci News"
+4) compila il form e preme invio.
+
+CASO D'USO 2 ADMIN: Aggiuntà di una country
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità news ,country, politician  e la cancellazione dei commenti)
+3) l'ADMIN seleziona "Inserisci country"
+4) compila il form e preme invio.
+
+CASO D'USO 3 ADMIN: Aggiuntà di una politician
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità news ,country, politician  e la cancellazione dei commenti)
+3) l'ADMIN seleziona "Inserisci politician"
+4) compila il form e preme invio.
+
+CASO D'USO 4 ADMIN: Modifica di una news
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità news ,country, politician  e la cancellazione dei commenti)
+3) l'ADMIN seleziona "Modifica News"
+4)L'ADMIN cliccando su una precisa news accede al form per modificarla
+5) compila il form e preme invio.
+6) L'ADMIN cliccando affianco alla news il tasto "Modifica Paesi", modifica le relazioni tra Country e News
+
+
+CASO D'USO 5 ADMIN: Modifica di una country
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità news ,country, politician  e la cancellazione dei commenti)
+3) l'ADMIN seleziona "Modifica Paesi"
+4)L'ADMIN cliccando su una precisa country accede al form per modificarla
+5) compila il form e preme invio.
+6) L'ADMIN cliccando affianco alla country il tasto "Modifica Politici", modifica le relazioni tra Country e Politician
+
+CASO D'USO 6 ADMIN: Modifica di una politician
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità news ,country, politician  e la cancellazione dei commenti)
+4)L'ADMIN cliccando su un preciso politician accede al form per modificarlo
+5) compila il form e preme invio.
+
+CASO D'USO 7 ADMIN: cancellazione recenzioni
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità news ,country, politician  e la cancellazione dei commenti)
+3) Clicca "cancella recensione"
+4) appare la lista degli oggetti entità
+5) Clicca la x Rossa per cancellare il singolo oggetto entità dal database
+
+CASO D'USO 8 ADMIN: cancellazione news
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità news ,country, politician  e la cancellazione dei commenti)
+3) Clicca "gestisci news"
+4) appare la lista degli oggetti entità
+5) Clicca la x Rossa per cancellare il singolo oggetto entità dal database
+
+CASO D'USO 9 ADMIN: cancellazione country
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità news ,country, politician  e la cancellazione dei commenti)
+3) Clicca "gestisci paesi"
+4) appare la lista degli oggetti entità
+5) Clicca la x Rossa per cancellare il singolo oggetto entità dal database
+
+CASO D'USO 10 ADMIN: cancellazione politician
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità news ,country, politician  e la cancellazione dei commenti)
+3) Clicca "gestisci politici"
+4) appare la lista degli oggetti entità
+5) Clicca la x Rossa per cancellare il singolo oggetto entità dal database
+--------------------------------------------------------------------------------------------
+
+CASO D'USO 11 DEFAULT: Commentare la news
+1) L'utente fa l'accesso mediante username e password.
+2) visualizza una news e clicca il pulsante per commentare la news
+3) compila il form del commento e preme invio.
+
+DEFAULT E ANONYMOUS:
+
+CASO D'USO 12-13-14: Visualizzazione della lista di oggetti entità (News,Country e Politician)
+
+CASO D'USO 15-16-17: Visualizzazione del singolo oggetto entità (News,Country e Politician)
+
+CASO D'USO 18-19-20: Ricerca di liste di oggetti entità(News,Country e Politician)

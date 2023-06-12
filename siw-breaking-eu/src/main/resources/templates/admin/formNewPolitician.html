@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Registrazione Politico</title>
+	  	<link rel="shortcut icon" href="/images/icona.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+</head>
+<body>
+<header th:replace="/fragments/base.html::intestazione"></header>
+<div class="wrapper" style="background-color: #0F5E76;">
+	
+    	<div class="form-container">
+      		<form class="form-Login text-center" th:action="@{/admin/politicians}" enctype="multipart/form-data" method="POST" th:object="${politician}" style="width: 50%; height:70%; border:black">
+				<h2 style="color:black;">Inserisci un nuovo Politico</h2>
+				<div th:if="${#fields.hasGlobalErrors()}">
+			
+					<errors>
+        				<p style="color:red;" th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+					</errors>
+				</div>
+				<div class="form-group">
+					<label for="name">Nome:</label> <span>
+					<input required type="text" th:field="${politician.name}" class="form-control" id="name"/></span>
+					<errors>
+						<span style="color:red;" th:if="${#fields.hasErrors('name')}" th:errors="${politician.name}"></span> 
+					</errors>
+				</div>
+
+				<div class="form-group">
+					<label for="surname">Cognome:</label> <span>
+					<input required type="text" th:field="${politician.surname}" class="form-control" id="surname"/></span>
+					<errors>
+						<span style="color:red;" th:if="${#fields.hasErrors('surname')}" th:errors="${politician.surname}"></span> 
+					</errors>
+				</div>
+		
+		
+				<div class="form-group">
+					<label for="dateOfBirth">Data di nascita:</label> 
+					<span><input required  type="date" th:field="${politician.dateOfBirth}" class="form-control" id="dateOfBirth" /></span>
+					<errors>
+						<span style="color:red;" th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="${politician.dateOfBirth}"></span> 
+					</errors>
+				</div>
+			
+	  		
+	  			<div class="form-group">
+	    				<label for="dateOfDeath">Data di morte:</label>
+	    				<span><input name="dateOfDeath" type="date" class="form-control" th:field="${politician.dateOfDeath}"></span>
+	    				<errors>
+							<span style="color:red;" th:if="${#fields.hasErrors('dateOfDeath')}" th:errors="${politician.dateOfDeath}"></span>
+						</errors>
+  				</div>
+				
+				<div class="form-group">
+  			  		<label for="image">Immagine</label>
+  		  	    	<input required type="file" id="image" name="image" class="form-control" th:field="${politician.image}"/>
+  		  	    	<errors>
+							<span th:if="${#fields.hasErrors('image')}" th:errors="${politician.image}"></span> 
+					</errors>
+				</div>
+	    
+				<div>
+					<span><button type="submit">INVIO</button></span>
+				</div>
+		
+		</form>
+  	</div>
+</div>
+      
+  <footer th:replace="/fragments/base.html::footer"></footer>
+  
+	</body>
+</html>

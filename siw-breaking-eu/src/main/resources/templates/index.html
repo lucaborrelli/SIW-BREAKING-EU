@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		 <meta charset="UTF-8">
+	 	<title>Breaking - EU</title>
+	 	<link rel="shortcut icon" href="/images/icona.svg" type="image/svg">
+	 	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+		<link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+ 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    	<style>
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: Arial, sans-serif;
+				background-color:#0F5E76;
+			}
+		</style>
+	</head>
+	<body>
+    <header th:replace="/fragments/base.html::intestazione"></header>
+	<div class="wrapper">
+		<video autoplay muted>
+	      <source src="/images/BreakingEuVideo.mp4" type="video/mp4">
+	    </video>
+	   </div>
+	       	<H1 style="margin-left: 38%;">LE NOSTRE FONTI:</H1>
+				
+				<span  class="entity" style="width:20%; margin-left:40%;">
+					<div >
+						<a href="https://www.fanpage.it/"><img src="/images/fanpage.jpg"/> Fanpage</a>
+					</div>
+				</span>
+				<span>
+					<div class="entity" style="width:20%; margin-left:40%;">
+						<a href="https://www.repubblica.it/"><img src="/images/laRepubblica.jpg"/> La Repubblica</a>
+					</div>
+				</span>
+				<span>
+					<div class="entity" style="width:20%; margin-left:40%;">
+						<a href="https://www.corriere.it/"><img src="/images/corriereDellaSera.jpg"/> Il Corriere della Sera</a>
+					</div>
+				</span>
+				<span>
+					<div class="entity" style="width:20%; margin-left:40%;">
+						<a href="https://www.ilsole24ore.com/"><img src="/images/ilSole24Ore.jpg"/>Il Sole 24 Ore</a>
+					</div>
+				</span>
+			</div>
+		</div>
+      <footer th:replace="/fragments/base.html::footer"></footer>
+	</body>
+</html>

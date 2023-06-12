@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Registrazione Paese</title>
+	  	<link rel="shortcut icon" href="/images/icona.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+</head>
+<body style = "background-color:#0F5E76;">
+<header th:replace="/fragments/base.html::intestazione"></header>
+<div class="wrapper">
+	
+    	<div class="form-container">
+      		<form class="form-Login text-center" th:action="@{/admin/countries}" enctype="multipart/form-data" method="POST" th:object="${country}" style="width: 50%; height:70%; border:black">
+				<h2 style="color:black;">Inserisci un nuovo Paese</h2>
+				<div th:if="${#fields.hasGlobalErrors()}">
+			
+					<errors>
+        				<p style="color:red;" th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+					</errors>
+				</div>
+				<div class="form-group">
+					<label for="name">Nome:</label> <span>
+					<input required type="text" th:field="${country.name}" class="form-control" id="name"/></span>
+					<errors>
+						<span style="color:red;" th:if="${#fields.hasErrors('name')}" th:errors="${country.name}"></span> 
+					</errors>
+				</div>
+				
+				<div class="form-group">
+					<label for="population">Densità della Popolazione (ab/km^2):</label> <span>
+					<input required type="text" th:field="${country.population}" class="form-control" id="population"/></span>
+					<errors>
+						<span style="color:red;" th:if="${#fields.hasErrors('population')}" th:errors="${country.population}"></span> 
+					</errors>
+				</div>
+				
+				<div class="form-group">
+					<label for="currency">Valuta:</label> <span>
+					<input required type="text" th:field="${country.currency}" class="form-control" id="currency"/></span>
+					<errors>
+						<span style="color:red;" th:if="${#fields.hasErrors('currency')}" th:errors="${country.currency}"></span> 
+					</errors>
+				</div>
+				
+				<div class="form-group">
+					<label for="pil">PIL pro capite [$]:</label> <span>
+					<input required type="text" th:field="${country.pil}" class="form-control" id="pil"/></span>
+					<errors>
+						<span style="color:red;" th:if="${#fields.hasErrors('pil')}" th:errors="${country.pil}"></span> 
+					</errors>
+				</div>
+				
+				<div class="form-group">
+					<label for="capital">Capitale:</label> <span>
+					<input required type="text" th:field="${country.capital}" class="form-control" id="capital"/></span>
+					<errors>
+						<span style="color:red;" th:if="${#fields.hasErrors('capital')}" th:errors="${country.capital}"></span> 
+					</errors>
+				</div>
+				
+				<div class="form-group">
+							<label for="formOfGovernment">Seleziona una forma di governo:</label>
+  							<select id="formOfGovernment" name="formOfGovernment" th:field="${country.formOfGovernment}">
+				  				<option value="">/</option>
+  				  				<option value="Repubblica Presidenziale">Repubblica Presidenziale</option>
+	    			 			<option value="Repubblica Semipresidenziale">Repubblica Semipresidenziale</option>
+	    			  			<option value="Repubblica Parlamentare">Repubblica Parlamentare</option>
+	    			 			<option value="Repubblica Monopartitica">Repubblica Monopartitica</option>
+	    			  			<option value="Monarchia Parlamentare">Monarchia Parlamentare</option>
+	    			  			<option value="Monarchia Costituzionale">Monarchia Costituzionale</option>
+	    			 			<option value="Monarchia Assoluta">Monarchia Assoluta</option>
+  						  </select>	
+  						  <errors>
+								<span style="color:red;" th:if="${#fields.hasErrors('formOfGovernment')}" th:errors="${country.formOfGovernment}"></span>
+							</errors>
+				</div>
+				
+				
+				
+				
+				<div class="form-group">
+  			  		<label for="image">Immagine</label>
+  		  	    	<input required type="file" id="image" name="image" class="form-control" th:field="${country.image}"/>
+  		  	    	<errors>
+							<span th:if="${#fields.hasErrors('image')}" th:errors="${country.image}"></span> 
+					</errors>
+				</div>
+	    
+				<div>
+					<span><button type="submit">INVIO</button></span>
+				</div>
+		
+		</form>
+  	</div>
+</div>
+      
+  <footer th:replace="/fragments/base.html::footer"></footer>
+  
+	</body>
+</html>

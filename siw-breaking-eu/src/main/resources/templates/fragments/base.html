@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/images/icona.svg" type="image/svg">
+    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+
+    <!-- Import CSS -->
+    <link th:href="@{/css/index.css}" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/stile.css" />
+
+    <!-- Custom styles -->
+    <link th:href="@{/css/carousel.css}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Indie+Flower"/>
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+
+    <link rel="stylesheet" th:href="@{/css/colours.css}">
+</head>
+<body>
+	<header th:fragment="intestazione" >
+        <nav id="BG" class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color:#000C74;">
+			
+            <a class="navbar-brand" sec:authorize="isAnonymous() or hasAuthority('DEFAULT')" th:href="@{'/public/index'}"><img src="/images/tastoHome.png" class="tastoHome"/></a>
+            <a class="navbar-brand" sec:authorize="hasAuthority('ADMIN')" th:href="@{'/admin/indexAdmin'}"><img src="/images/tastoHome.png" class="tastoHome"/></a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto" sec:authorize="isAnonymous() or hasAuthority('DEFAULT')">
+				  
+                <li class="nav-item " sec:authorize="hasAnyAuthority('ADMIN')">
+					
+                  <a class="nav-link" th:href="@{/index}">Home</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" th:href="@{/public/newses}">News</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/public/countries}">Paesi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/public/politicians}">Politici</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/public/formSearchNewses}">Cerca News</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/public/formSearchCountries}">Cerca Paesi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" th:href="@{/public/formSearchPoliticians}">Cerca Politici</a>
+                </li>
+                
+                <li class="logo" >
+				  <img src="/images/logoHome.png"/>
+				</li>
+              </ul>
+
+              <ul class="navbar-nav mr-auto" sec:authorize="hasAnyAuthority('ADMIN')">
+                <li class="logo" >
+				  <img src="/images/logoHome.png" style="align-items: center;"/>
+				</li>
+              </ul>
+            	
+            	
+            	<a class="registrazione btn btn-outline my-2 my-sm-0" sec:authorize="!isAuthenticated()" type="signup" style="background-color:#ab9eb5;" th:href="@{/signup}">Registrazione</a>
+            	
+            	
+            	<a class="log btn btn-outline my-2 my-sm-0" sec:authorize="isAuthenticated()" type="logout" style="background-color:#ab9eb5;" th:href="@{/logout}">Logout</a>
+                <a class="log btn btn-outline my-2 my-sm-0" sec:authorize="!isAuthenticated()" type="login" style="background-color:#ab9eb5;" th:href="@{/login}">Login</a>
+                
+            </div>
+        </nav>
+  </header>
+
+
+      <footer th:fragment="footer" alt="Footer">
+		<img src="/images/footer.png" /> 
+      </footer>
+  
+</body>
+
+
+</html>

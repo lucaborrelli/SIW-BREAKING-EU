@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Gestione delle News</title>
+	  	<link rel="shortcut icon" href="/images/icona.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+</head>
+
+<body style = "background-color:#0F5E76;">
+	
+	<header th:replace="/fragments/base.html::intestazione"></header>	
+	<div class="wrapper" style="top:35%;">
+    	<div class="content" style="margin-top:10%;">
+			<div class="container-entity">
+			<div th:if="${newses.isEmpty()}">Non ci sono News presenti nel database</div>
+				<div  class="container-entity">
+					<div th:if="${!newses.isEmpty()}">
+						<ul>
+							<li th:each="news : ${newses}">								
+								<span class="entity">
+									<img th:src="@{/image/{id}(id=${news.id})}"/>
+									<h2><a href="news.html" th:href="@{'/admin' + '/formUpdateNews/' +${news.id}}" th:text="${news.title} + ' (' + ${news.writer}+')'"></a></h2>
+									<a th:href="@{'/admin' + '/deleteNews/' +${news.id}}"><img src="/images/trash.png"/></a>
+									<div>
+										<span class="flex-item"> <a th:href="@{'/admin' + '/updateCountriesOfNews/' +${news.id}}"><h4>Modifica Paesi</h4></a></span>
+									</div>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			  </div>
+ 		</div>
+	</div>
+	
+	 <footer th:replace="/fragments/base.html::footer"></footer>
+	 
+  </body>
+</html>
+

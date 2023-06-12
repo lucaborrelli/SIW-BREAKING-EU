@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Cerca News</title>
+	  	<link rel="shortcut icon" href="/images/icona.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+</head>
+<body style="background-color:#0F5E76;">
+	<header th:replace="/fragments/base.html::intestazione"></header>
+<div class="wrapper">
+    <div class="content form_centrato">
+      
+      <form class="form-Login form-container text-center" th:action="@{/public/searchNewses}" method='POST' style="width: 25%; height:40%; border:black">
+		   <h5> Perfavore inserisci i dati per cercare la News</h5>
+			
+	        <div class="form-group">
+				<label for="title">Titolo: </label>
+				<span><input name="title" type="text" width="40%" class="form-control" placeholder="Inserisci il titolo"></span>		
+			</div>
+		  <br>
+			<div class="form-group">
+				<label for="writer">Fonte: </label>
+				<span><input name="writer" type="text" width="40%" class="form-control" placeholder="Inserisci la fonte"></span>		
+			</div>
+	        
+			<button type="submit" class="btn btn-primary btn-block" style="align-items: center ;" >Invio</button>
+      </form>
+      
+    </div>
+  </div>
+  <footer th:replace="/fragments/base.html::footer"></footer>
+</body>
+
+</html>

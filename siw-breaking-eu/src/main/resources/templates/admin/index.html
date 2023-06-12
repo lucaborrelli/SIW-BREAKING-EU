@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Homepage ADMIN</title>
+	  	<link rel="shortcut icon" href="/images/icona.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+ 
+	</head>
+	
+	<body style = "background-color:#0F5E76;">
+		
+		<header th:replace="/fragments/base.html::intestazione"></header>
+		<br>
+		<div>
+		<div>
+    		<div class="content">
+				<main class="adminFeatures"  style="margin-top:15%;">
+					<br>
+					<br>
+					<h5>Operazioni per le news</h5>
+					
+					<div>
+						<a href="/admin/formNewNews"><img src="/images/inserisciNews.png" style=" display: block; margin: auto;"/></a>
+					</div>
+					<div>
+						<a href="/admin/manageNewses"><img src="/images/gestisciNews.png" style=" display: block; margin: auto;"/></a>
+					</div>
+					<h5>Operazioni per i Paesi</h5>
+					<div>
+						<a href="/admin/formNewCountry"><img src="/images/inserisciPaese.png" style=" display: block; margin: auto;"/></a>
+					</div>
+					
+					<div>
+						<a href="/admin/manageCountries"><img src="/images/modificaPaese.png" style=" display: block; margin: auto;"/></a>
+					</div>
+					<h5>Operazioni per i Politici</h5>
+					<div>
+						<a href="/admin/formNewPolitician"><img src="/images/inserisciPolitico.png" style=" display: block; margin: auto;"/></a>
+					</div>
+					
+					<div>
+						<a href="/admin/managePoliticians"><img src="/images/modificaPolitico.png" style=" display: block; margin: auto;"/></a>
+					</div>
+					<h5>Operazioni sui commenti</h5>
+					<div>
+						<a href="/admin/Comments"><img src="/images/cancellaCommenti.png" style=" display: block; margin: auto;"/></a>
+					</div>
+				</main>
+    		</div>
+		</div>
+		</div>
+		<div style="margin-top:80%;">
+			<footer th:replace="/fragments/base.html::footer"></footer>
+		</div>
+	</body>
+</html>
