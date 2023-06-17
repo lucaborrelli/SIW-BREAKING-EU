@@ -45,7 +45,7 @@ CASO D'USO 6 ADMIN: Modifica di una politician
 4)L'ADMIN cliccando su un preciso politician accede al form per modificarlo
 5) compila il form e preme invio.
 
-CASO D'USO 7 ADMIN: cancellazione recenzioni
+CASO D'USO 7 ADMIN: cancellazione commenti
 1)Amministratore accede al sistema tramite username e password
 2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
   (Inserimento e gestione delle entità news ,country, politician  e la cancellazione dei commenti)
